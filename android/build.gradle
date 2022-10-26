@@ -1,0 +1,37 @@
+buildscript {
+    ext.kotlin_version = '1.6.10'
+    repositories {
+        maven { url "https://dl.google.com/dl/android/maven2/" }
+        maven { url "https://storage.googleapis.com/download.flutter.io" }
+        maven {url 'https://developer.huawei.com/repo/'}
+        jcenter()
+
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "https://dl.google.com/dl/android/maven2/" }
+        maven { url "https://storage.googleapis.com/download.flutter.io" }
+        maven {url 'https://developer.huawei.com/repo/'}
+        jcenter()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,30 @@
+name: rolling_beast
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.1 <3.0.0'
+
+dependencies:
+  duration: ^3.0.6
+  flutter:
+    sdk: flutter
+  flutter_hooks:
+  flutter_map:
+  gpx:
+  intl:
+  latlong2:
+  permission_handler: ^10.0.1
+  sqflite:
+  sqflite_migration_service: ^2.0.0-nullsafety.0
+  synchronized:
+  uuid:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
